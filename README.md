@@ -74,4 +74,4 @@ The user need to find the optimal path while finding the path there will be myst
 
 ![Game](https://github.com/hemanth9627/puzzle_application/blob/main/screenshots/game.png)
 
-![Dashboard](https://github.com/hemanth9627/puzzle_application/blob/a6f70e18c5dcbdb845f1867a496fdcd82611c08f/screenshots/dashboard.png)
+![Dashboard](https://github.com/hemanth9627/puzzle_application/blob/main/screenshots/dashboard.png)
