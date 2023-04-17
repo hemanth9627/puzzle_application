@@ -75,3 +75,25 @@ The user need to find the optimal path while finding the path there will be myst
 ![Game](https://github.com/hemanth9627/puzzle_application/blob/main/screenshots/game.png)
 
 ![Dashboard](https://github.com/hemanth9627/puzzle_application/blob/main/screenshots/dashboard.png)
+
+
+## Possible path
+
+![path](https://github.com/hemanth9627/puzzle_application/blob/main/screenshots/path.png)
+
+## Features implemented
+
+Anyone with an email address can create an Id and password to participate in the gameThe.
+puzzle contain
+.Minimum 5 clues(Mystery boxes).
+.Minimum 2 dead-ends(questions).
+.Minimum 1 solution(optimal path with maximum score).
+All the progress / user data (eg - time taken by each user for every step, solution accuracy, etc.) depending on your puzzle requirements should be stored for every user.
+A dashboard for the admin where the progress of all the users can be tracked & analyzed.
+User analytics (eg - time taken by each user for every step, solution accuracy, etc.) depending on your puzzle should be stored and shown in the admin dashboard
+Data analysis using different graphs or tables.
+User Leaderboard implemented.
+
+##Softskills assessed
+
+there are different types of questions to assess softskills like grammer,sentence formation,etc.
