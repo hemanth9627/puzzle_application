@@ -11,7 +11,7 @@ import React, { useState } from 'react';
 import * as Yup from 'yup';
 import { useNavigate } from 'react-router-dom';
 import { login, register } from '../service/firebase/auth';
-import { MazeBoard } from './MazeBoard';
+// import { MazeBoard } from './MazeBoard';
 export const RegistrationForm = ({ goToLogin }) => {
     const [btnLoading, setbtnLoading] = useState(false);
     const [alertMsg, setalertMsg] = useState(null);
@@ -37,9 +37,8 @@ export const RegistrationForm = ({ goToLogin }) => {
                 if (register(values.username, values.email, values.password)) {
                     setbtnLoading(false);
                     alert('account created please login');
-                    {
+                    
                         goToLogin();
-                    }
                 } else {
                     setbtnLoading(false);
                     setalertMsg('Unable to create account');

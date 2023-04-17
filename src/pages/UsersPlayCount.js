@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { getuserdata, leaderbord } from "../service/firebase/auth";
 import { userId } from "../service/firebase/auth";
-import { get1user } from "../service/firebase/auth";
+//import { get1user } from "../service/firebase/auth";
 // import "../styles/leaderboard.modules.css"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Button } from "@mui/material";

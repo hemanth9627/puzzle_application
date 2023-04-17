@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react'
-import { leaderbord } from '../service/firebase/auth'
+import React from 'react'
+// import { leaderbord } from '../service/firebase/auth'
 import '../styles/leaderboard.module.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 

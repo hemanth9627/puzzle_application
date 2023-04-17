@@ -11,7 +11,7 @@ import {
 import { useNavigate } from 'react-router-dom';
 import { HintQuestionDialog } from '../components/HintQuestionDialog';
 import { HintDialog } from '../components/HintDialog';
-import { updateleadboard } from '../service/firebase/auth';
+// import { updateleadboard } from '../service/firebase/auth';
 const GameInfo = ({ time, coins, score }) => {
     return (
         <div
@@ -97,9 +97,9 @@ export const GameScreen = () => {
             console.log('hi')
             
             try{
-                const userdata = JSON.parse( localStorage.getItem('userdata'))
-                const data = await updateleadboard(userdata.uid,state.score,timer
-                    ,state.coins)
+              //  const userdata = JSON.parse( localStorage.getItem('userdata'))
+                // const data = await updateleadboard(userdata.uid,state.score,timer
+                //    ,state.coins)
                 console.log('naviating')
                 navigate('/profile',{
                     state:{
@@ -122,13 +122,13 @@ export const GameScreen = () => {
                     const board = state.BOARD.map((row, row_index) => {
                         return row.map((col, col_index) => {
                             if (
-                                row_index == newPosition[0] &&
+                                row_index === newPosition[0] &&
                                 col_index === newPosition[1]
                             ) {
                                 return CELL_TYPES.EMPTY;
                             }
                             if (
-                                row_index == currentPosition[0] &&
+                                row_index === currentPosition[0] &&
                                 col_index === currentPosition[1]
                             ) {
                                 return CELL_TYPES.WALL;
@@ -141,6 +141,7 @@ export const GameScreen = () => {
                         currentPosition: [...newPosition],
                         BOARD: board,
                         coins: prevState.coins + 1,
+                        score: prevState.score + 10,
                     };
                 });
                 break;
@@ -152,13 +153,13 @@ export const GameScreen = () => {
                     const board = prevState.BOARD.map((row, row_index) => {
                         return row.map((col, col_index) => {
                             if (
-                                row_index == newPosition[0] &&
+                                row_index === newPosition[0] &&
                                 col_index === newPosition[1]
                             ) {
                                 return CELL_TYPES.EMPTY;
                             }
                             if (
-                                row_index == currentPosition[0] &&
+                                row_index === currentPosition[0] &&
                                 col_index === currentPosition[1]
                             ) {
                                 return CELL_TYPES.WALL;
@@ -183,7 +184,7 @@ export const GameScreen = () => {
                     const board = prevState.BOARD.map((row, row_index) => {
                         return row.map((col, col_index) => {
                             if (
-                                row_index == currentPosition[0] &&
+                                row_index === currentPosition[0] &&
                                 col_index === currentPosition[1]
                             ) {
                                 return CELL_TYPES.WALL;
@@ -230,7 +231,7 @@ export const GameScreen = () => {
             hintDialogOpen: true,
             dialogOpen: false,
             questionNo: prevState.questionNo + 1,
-            score: isCorrect ? prevState.score + 1 : prevState.score,
+            score: isCorrect ? prevState.score + 20 : prevState.score,
             wrongAnswers:isCorrect ? prevState.wrongAnswers : prevState.wrongAnswers+1
         }));
     };

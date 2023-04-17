@@ -26,10 +26,10 @@ export function AuthScreen() {
         backgroundImage: `url(${BgImage})`,
       }}
     >
-        {currentForm == FORMS.LOGIN && (
+        {currentForm === FORMS.LOGIN && (
           <SignIn goToRegistration={goToRegistration} />
         )}
-        {currentForm == FORMS.REGISTRATION && (
+        {currentForm === FORMS.REGISTRATION && (
           <RegistrationForm goToLogin={goToLogin} />
         )}
     </div>

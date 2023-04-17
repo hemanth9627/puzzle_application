@@ -6,17 +6,8 @@ import { initializeApp } from "firebase/app";
 // Your web app's Firebase configuration
 // import firebase from 'firebase';
 import {
-  getDatabase,
-  ref,
-  set,
-  get,
-  onValue,
-  update,
-  remove,
-  equalTo,
-  query,
-  orderByChild,
-  child,
+ 
+  query
 } from "firebase/database";
 // import * as firebase from 'firebase';
 
@@ -24,7 +15,6 @@ import {
 import { getAuth } from "firebase/auth";
 
 import {
-  documentId,
   getDocs,
   getFirestore,
   where,
@@ -38,7 +28,7 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
 } from "firebase/auth";
-import { addDoc, collection, getDoc } from "firebase/firestore";
+import { addDoc, collection } from "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: "AIzaSyCi4qmd3cQpzHQGiCu_JGu54bEaLaXV77g",
@@ -52,7 +42,7 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
-const database = getDatabase(app);
+// const database = getDatabase(app);
 const db = getFirestore(app);
 
 
@@ -73,7 +63,7 @@ export async function register(username, email, password) {
       "   " +
       email
   );
-  if (validate_email(email) == false || validate_password(password) == false) {
+  if (validate_email(email) === false || validate_password(password) === false) {
     console.log("Email or Password is incorrect.");
     return false;
     // Don't continue running the code
@@ -118,7 +108,7 @@ export async function register(username, email, password) {
     })
     .catch(function(error) {
       // Firebase will use this to console.log of its errors
-      var error_code = error.code;
+    //  var error_code = error.code;
       var error_message = error.message;
 
       console.log(error_message);
@@ -135,12 +125,12 @@ export async function login(email, password) {
 
   // Validate input fields
   console.log(validate_email(email),validate_password(password))
-  if (validate_email(email) == false || validate_password(password) == false) {
+  if (validate_email(email) === false || validate_password(password) === false) {
     console.log("Email or Password is incorrect");
     return false;
     // Don't continue running the code
   }
-  var udata = {};
+  // var udata = {};
   return signInWithEmailAndPassword(auth, email, password)
     .then(()=> {
       // Declare user variable
@@ -151,7 +141,7 @@ export async function login(email, password) {
       
       update_user(user);
 
-      var data = getfirestore(user.uid);
+    //  var data = getfirestore(user.uid);
 
       return get1user(user.uid).then((data) => {
         return data
@@ -170,7 +160,7 @@ export async function login(email, password) {
     })
     .catch(function(error) {
       // Firebase will use this to console.log of its errors
-      var error_code = error.code;
+    //  var error_code = error.code;
       var error_message = error.message;
 
       console.log(error_message);
@@ -281,7 +271,7 @@ export async function addgame(userinfo, time, score) {
 }
 function validate_email(email) {
   const expression = /^[^@]+@\w+(\.\w+)+\w$/;
-  if (expression.test(email) == true) {
+  if (expression.test(email) === true) {
     // Email is good
     return true;
   } else {
@@ -298,17 +288,17 @@ function validate_password(password) {
   }
 }
 
-function validate_field(field) {
-  if (field == null) {
-    return false;
-  }
+// function validate_field(field) {
+//   if (field == null) {
+//     return false;
+//   }
 
-  if (field.length <= 0) {
-    return false;
-  } else {
-    return true;
-  }
-}
+//   if (field.length <= 0) {
+//     return false;
+//   } else {
+//     return true;
+//   }
+// }
 
 //leader board functions
 export async function addleaderbord(userinfo) {

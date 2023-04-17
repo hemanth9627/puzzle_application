@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
 import Profile from "./pages/Profile";
-import AdminLeaderBoard from "./pages/AdminLeaderBoard";
+//import AdminLeaderBoard from "./pages/AdminLeaderBoard";
 import UsersPlayCount from "./pages/UsersPlayCount";
 
-import { getuserdata, login, register,updateleadboard } from "./service/firebase/auth";
-import { MazeBoard } from "./components/MazeBoard";
-import { BrowserRouter, Route, Routes, useNavigate } from "react-router-dom";
+//import { getuserdata, login, register,updateleadboard } from "./service/firebase/auth";
+//import { MazeBoard } from "./components/MazeBoard";
+import {  Route, Routes} from "react-router-dom";
 import { AuthScreen } from "./pages/AuthScreen";
 import Appbar from "./components/Appbar";
 import { GameScreen } from "./pages/GameScreen";
@@ -15,7 +15,7 @@ import { GameScreen } from "./pages/GameScreen";
 // register({ email: "hemanth@gmail.con", password: 987654321 });
 
 function App() {
-  const navigate = useNavigate()
+ // const navigate = useNavigate()
   useEffect(()=>{
   //  navigate('/')
   },[])

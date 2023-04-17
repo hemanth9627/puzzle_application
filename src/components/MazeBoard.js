@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import {
     BOARD_BORDER_COLOR,
     BOARD_BORDER_SIZE,
@@ -88,7 +88,7 @@ export const MazeBoard = ({top,bottom,right,left,  state }) => {
                                 if (CELL_TYPE === CELL_TYPES.COIN)
                                     return <CoinCell key={key}/>;
 
-                                if (CELL_TYPE == CELL_TYPES.HINT)
+                                if (CELL_TYPE === CELL_TYPES.HINT)
                                     return <HintCell key={key}/>;
                                 return <EmptyCell key={key}/>;
                             }
