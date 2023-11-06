@@ -33,12 +33,12 @@ import { addDoc, collection } from "firebase/firestore";
 const firebaseConfig = {
   apiKey: "AIzaSyCi4qmd3cQpzHQGiCu_JGu54bEaLaXV77g",
   authDomain: "puzzle-application-70b2e.firebaseapp.com",
+  databaseURL: "https://puzzle-application-70b2e-default-rtdb.firebaseio.com",
   projectId: "puzzle-application-70b2e",
   storageBucket: "puzzle-application-70b2e.appspot.com",
   messagingSenderId: "675248316988",
   appId: "1:675248316988:web:3f2724f27969ad10ce9939",
 };
-
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
